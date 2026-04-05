@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://i.pinimg.com/1200x/0c/ec/e6/0cece6e2d5d3768eb8a0d1b30632b2ff.jpg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mynerve&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <head>
+        <title>De Joao, para Emi =3</title>
+        <style>
+            .luckiest-guy-regular {
+                font-family: "Luckiest Guy", cursive;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            .travado {
+                overflow-y: hidden;
+            }
+            .mynerve-regular {
+                font-family: "Mynerve", cursive;
+                font-weight: 400;
+                font-style: normal;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+                background-image: url('fundo.png');
+                background-size: cover;       /* Faz a imagem cobrir a tela toda */
+                background-position: center;  /* Centraliza o padrão */
+                background-attachment: fixed; /* O fundo não mexe quando você rola a página */
+                background-repeat: no-repeat;
+            }
+            hr {
+                height: 10px;
+                border: none;
+            }
+            h1 {
+                text-transform: uppercase;
+                font-size: 10vw;
+                text-align: center;
+                margin: 0;
+                color: white;
+            }
+            p {
+                font-family: "Luckiest Guy", cursive;
+                text-align: center;
+                text-shadow: 0px 5px 8px pink;
+                margin: 0;
+                font-size: 20vw;
+                color: #3D0A38;
+                z-index: 1;
+                position: relative;
+            }
+            #IMG1 {
+                position: relative;
+                display: flex;
+                height: 54vw;
+                margin: 0 auto;
+                padding: 0;
+                margin-top: -50px;
+                z-index: 0;
+            }
+
+            #outroP {
+                font-family: "Mynerve", cursive;
+                text-align: center;
+                font-size: 5vw;
+                color: #E24BD3;
+                margin-bottom: -20px;
+                padding: 0;
+            }
+
+            #meuBotao {
+                display: block;
+                position: relative;
+                justify-content: center;
+                font-family: Monospace;
+                background: white;
+                width: 30%;
+                height: 30px;
+                color: black;
+                margin: 0 auto;
+                margin-top: 20px;
+                border-radius: 10px;
+                border: 1px solid blue;
+                background-color: white;
+                text-align: center;
+            }
+
+            #meuBotao:hover {
+                transform: scale(1.1);
+            }
+
+            dialog::backdrop {
+                background-color: rgb(0, 0, 0, 0.1)
+            }
+        </style>
+    </head>
+    <body class="travado">
+        <h1> Um site especial feito para...</h1>
+        <button id="meuBotao">Clique Aqui!</button>
+        <dialog show>
+            
+            <p>EMILLY!</p>
+            <img id="IMG1"src="https://i.pinimg.com/1200x/0c/ec/e6/0cece6e2d5d3768eb8a0d1b30632b2ff.jpg">
+            <p id="outroP">Posso não ser rico, inteligente ou presente...<br>Mas aos meus olhos, você sempre será a minha irmãzinha favorita ♡</p>
+            <hr>
+        </dialog>
+        
+        <script>
+            const button = document.getElementById('meuBotao');
+            const body = document.querySelector('body');
+            const modal = document.querySelector('dialog');
+            const som = new Audio ('sound.mp3')
+            const musica = new Audio ('bgsound.mp3')
+
+            button.onclick = function () {
+                modal.showModal();
+                body.classList.remove('travado');
+                som.play();
+
+                som.onended = function (){
+                    musica.play();
+                }
+                
+            }
+        </script>
+    </body>
+</html>
